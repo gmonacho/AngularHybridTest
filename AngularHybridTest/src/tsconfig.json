@@ -1,0 +1,24 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "outFile": "my-app.js",
+    "rootDir": ".",
+    "allowJs": false,
+    "module": "system"
+  },
+  "filesGlob": [
+    "./**/*.d.ts",
+    "./**/*Module.ts",
+    "./**/*Service.ts",
+    "./**/*Controller.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}
