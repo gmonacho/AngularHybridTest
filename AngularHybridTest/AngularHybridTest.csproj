@@ -69,17 +69,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\Index.html" />
+    <Content Include="dist\Index.html" />
+    <Content Include="dist\main.js" />
+    <Content Include="src\Index.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Web.config" />
+    <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\tsconfig.json" />
+    <Content Include="src\tsconfig.json" />
+    <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
@@ -90,16 +94,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="App\Application.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\controllers\" />
-    <Folder Include="App\directives\" />
-    <Folder Include="App\interfaces\" />
-    <Folder Include="App\services\" />
+    <Folder Include="src\controllers\" />
+    <Folder Include="src\directives\" />
+    <Folder Include="src\interfaces\" />
+    <Folder Include="src\services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -125,6 +126,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties app_4tsconfig_1json__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
