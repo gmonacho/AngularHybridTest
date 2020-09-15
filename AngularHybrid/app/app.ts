@@ -1,2 +1,2 @@
 ﻿
-angular.module('app', []);
+angular.module('combine', ['app','test','hexafy']);
