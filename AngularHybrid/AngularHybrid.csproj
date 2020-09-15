@@ -76,6 +76,7 @@
     <TypeScriptCompile Include="app\ConvertFormDirective.ts" />
     <TypeScriptCompile Include="app\hexcontroller.ts" />
     <TypeScriptCompile Include="app\BaseService.ts" />
+    <TypeScriptCompile Include="app\IBaseService.ts" />
     <TypeScriptCompile Include="index.ts" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />

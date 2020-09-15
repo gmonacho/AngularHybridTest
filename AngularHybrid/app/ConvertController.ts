@@ -1,28 +1,33 @@
-import { BaseService } from "./BaseService";
+import { IBaseService } from "./IBaseService";
 
 export class ConvertController implements ng.IController {
 
     public static $inject = [
         "BaseService",
+        "$location"
     ]
 
-    private baseSvc: BaseService;
+    private baseSvc: IBaseService;
+    private $location: ng.ILocationService;
+    private $injector: ng.auto.IInjectorService;
     public nombre: number;
-    public resultat: number;
+    public resultat: string;
 
-    constructor(baseSvc: BaseService) {
+    constructor(baseSvc: IBaseService,
+        $location: ng.ILocationService,
+        $injector: ng.auto.IInjectorService) {
         this.baseSvc = baseSvc;
+        this.$location = $location;
+        this.$injector = $injector;
     }
     
     OnConvert() {
-        this.resultat = this.baseSvc.moinsUn(this.nombre);
+        this.resultat = 'location : ' + this.$location.absUrl() + ' dimension numero ' + this.baseSvc.moinsUn(this.nombre);
     }
 
     $onInit() {
         this.nombre = 0;
-        this.resultat = 0;
+        this.resultat = "vide";
     }
 }
 
-
-angular.module('app', []).controller('ConvertController', ConvertController);
