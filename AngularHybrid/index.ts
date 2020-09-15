@@ -1,4 +1,4 @@
 ﻿import './app/app';
-import './app/controller';
-import './app/directrive';
-import './app/service';
+import './app/ConvertController';
+import './app/ConvertFormDirective';
+import './app/BaseService';

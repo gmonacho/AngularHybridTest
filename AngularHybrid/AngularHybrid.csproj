@@ -72,7 +72,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.ts" />
     <Content Include="index.html" />
-    <TypeScriptCompile Include="app\food.ts" />
+    <TypeScriptCompile Include="app\ConvertController.ts" />
+    <TypeScriptCompile Include="app\ConvertFormDirective.ts" />
+    <TypeScriptCompile Include="app\hexcontroller.ts" />
+    <TypeScriptCompile Include="app\BaseService.ts" />
     <TypeScriptCompile Include="index.ts" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
