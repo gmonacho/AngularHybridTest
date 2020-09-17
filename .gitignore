@@ -160,3 +160,5 @@ ClientBin/
 *.publishsettings
 node_modules/
 
+package-lock.json
+AngularHybridTest/package-lock.json

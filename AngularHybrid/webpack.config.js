@@ -7,9 +7,8 @@ module.exports = {
     entry: "./index.ts",
     devtool: 'inline-source-map',
     output: {
-        path: path.resolve(__dirname, "wwwroot"),
-        filename: "[name].[chunkhash].js",
-        publicPath: "/"
+        filename: 'webpack.bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
     resolve: {
         extensions: [".js", ".ts"]
@@ -27,12 +26,12 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: "./index.html"
-        }),
-        new MiniCssExtractPlugin({
-            filename: "css/[name].[chunkhash].css"
         })
+        //new CleanWebpackPlugin(),
+        //new MiniCssExtractPlugin({
+        //    filename: "css/[name].[chunkhash].css"
+        //})
     ]
 };
