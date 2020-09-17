@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     mode: 'development',
-    entry: "./index.ts",
+    entry: "./app/main.ts",
     devtool: 'inline-source-map',
     output: {
         filename: 'webpack.bundle.js',
