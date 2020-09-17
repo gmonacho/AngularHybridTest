@@ -11,12 +11,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: [".js", ".ts"]
+        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 use: "ts-loader"
             },
             {
