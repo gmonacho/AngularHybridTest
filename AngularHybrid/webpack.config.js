@@ -1,22 +1,27 @@
-﻿const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+﻿const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+
+/* Pour régler les warnings core-js */
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
     mode: 'development',
-    entry: "./index.ts",
+    entry: "./ng-app/main.ts",
     devtool: 'inline-source-map',
     output: {
         filename: 'webpack.bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: [".js", ".ts"]
+        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 use: "ts-loader"
             },
             {
@@ -28,7 +33,15 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./index.html"
-        })
+        }),
+        /* Pour régler les warnings core-js */
+        new webpack.ContextReplacementPlugin(
+            // if you have anymore problems tweet me at @gdi2290
+            // The (\\|\/) piece accounts for path separators for Windows and MacOS
+            /(.+)?angular(\\|\/)core(.+)?/,
+            path.join(__dirname, 'src'), // location of your src
+            {} // a map of your routes
+        )
         //new CleanWebpackPlugin(),
         //new MiniCssExtractPlugin({
         //    filename: "css/[name].[chunkhash].css"
