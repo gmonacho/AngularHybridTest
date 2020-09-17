@@ -26,3 +26,6 @@ import "core-js/es/array/from";
 import "core-js/proposals/reflect-metadata";
 // polyfill all stage 2+ proposals:
 import "core-js/stage/2";
+
+// Zone.js
+import 'zone.js/dist/zone';
