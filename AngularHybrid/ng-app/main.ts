@@ -15,7 +15,6 @@ import { SecondComponent } from './stackoverflow/second.component';
         BrowserModule,
         UpgradeModule,
         FormsModule
-
     ],
     declarations: [
         AngularComponent, SecondComponent
@@ -24,7 +23,16 @@ import { SecondComponent } from './stackoverflow/second.component';
         AngularComponent, SecondComponent
     ],
     providers: [
-        AngularJsService
+        {
+            provide: AngularJsService,
+            useClass: AngularJsService,
+            deps: ['$location']
+        },
+        {
+            provide: '$location',
+            useFactory: ($injector: any) => $injector.get('$location'),
+            deps: ['$injector']
+        },
     ]
 })
 

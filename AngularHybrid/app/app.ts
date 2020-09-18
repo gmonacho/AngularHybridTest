@@ -7,7 +7,7 @@ import { SecondComponent } from "../ng-app/stackoverflow/second.component";
 
 angular.module('app', [])
     .controller('AngularJsController', AngularJsController)
-    .service('AngularJsService', AngularJsService)
+    .service('AngularJsService', downgradeInjectable(AngularJsService))
     .directive('angularjsDirective', AngularJsDirective)
     .directive('angularComponent', downgradeComponent({ component: AngularComponent }))
     .directive('secondComponent', downgradeComponent({ component: SecondComponent }));

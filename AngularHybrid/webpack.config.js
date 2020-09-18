@@ -11,6 +11,9 @@ module.exports = {
     mode: 'development',
     entry: "./ng-app/main.ts",
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: __dirname
+    },
     output: {
         filename: 'webpack.bundle.js',
         path: path.resolve(__dirname, 'dist')
