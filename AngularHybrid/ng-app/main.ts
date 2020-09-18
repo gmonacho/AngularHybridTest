@@ -4,12 +4,27 @@ import './polyfills'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';
+import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AngularComponent } from './stackoverflow/angular.component';
+import { AngularJsService } from '../app/stackoverflow/angularjs.service';
+import { SecondComponent } from './stackoverflow/second.component';
 
 @NgModule({
     imports: [
         BrowserModule,
-        UpgradeModule
+        UpgradeModule,
+        FormsModule
+
+    ],
+    declarations: [
+        AngularComponent, SecondComponent
+    ],
+    entryComponents: [
+        AngularComponent, SecondComponent
+    ],
+    providers: [
+        AngularJsService
     ]
 })
 
