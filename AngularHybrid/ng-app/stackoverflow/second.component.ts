@@ -2,7 +2,7 @@
 import { AngularJsService } from "../../app/stackoverflow/angularjs.service";
 
 @Component({
-    selector: 'angular-component',
+    selector: 'second-component',
     templateUrl: 'ng-app/stackoverflow/second.template.html'
 })
 export class SecondComponent {
