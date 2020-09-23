@@ -4,7 +4,7 @@ import { ConvertController } from "./ConvertController";
 import { ConvertFormDirective } from "./ConvertFormDirective";
 
 angular.module('app', [])
-    .service('BaseService', BaseService)
-    .controller('ConvertController', ConvertController)
-    .directive('convertFormDirective', ConvertFormDirective)
+    //.service('BaseService', BaseService)
+    //.controller('ConvertController', ConvertController)
+    //.directive('convertFormDirective', ConvertFormDirective)
     //.factory('HexService', downgradeInjectable(HexService) as any);

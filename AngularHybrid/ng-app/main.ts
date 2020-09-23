@@ -1,6 +1,8 @@
 ﻿import '../app/index'
 import './polyfills'
+import 'app/Application/ApplicationSchema';
 
+import { ApplicationSchema } from "app/Application/ApplicationSchema";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';
@@ -10,7 +12,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     imports: [
         BrowserModule,
         UpgradeModule
-    ]
+    ],
+    //bootstrap: [ApplicationSchema]
 })
 
 export class AppModule {
@@ -23,5 +26,7 @@ export class AppModule {
 platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
     console.log("Bootstrapping in Hybrid mode with Angular & AngularJS");
     const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
-    upgrade.bootstrap(document.body, ['app']);
+    //upgrade.bootstrap(document.body, ['app']);
+    angular.module('esaboraSchema', []);
+    upgrade.bootstrap(document.body, ['esaboraSchema']);
 });
