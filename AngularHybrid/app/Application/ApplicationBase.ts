@@ -10,8 +10,7 @@ import { IApplication } from "./IApplication";
 
         public start(): void {
 
-            console.log('ApplicationBase')
-            //console.log(`Démarrage de ${this.name()}`);
+            console.log(`Démarrage de ${this.name()}`);
 
             // Création du module
             this.module = angular.module(this.name(), this.moduleDependencies());
@@ -25,10 +24,10 @@ import { IApplication } from "./IApplication";
             this.registerServices();
 
             // Configuration du module
-            this.module.config(this.moduleConfiguration());
+            // this.module.config(this.moduleConfiguration());
 
             // Run du module
-            this.module.run(this.moduleRun());
+            // this.module.run(this.moduleRun());
         }
 
         protected abstract name(): string;
