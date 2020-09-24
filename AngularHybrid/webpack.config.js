@@ -10,6 +10,7 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'development',
     entry: "./ng-app/main.ts",
+    //entry: "./app/Application/ApplicationSchema.ts",
     devtool: 'inline-source-map',
     devServer: {
         contentBase: __dirname

@@ -1,6 +1,8 @@
 ﻿import '../app/index'
 import './polyfills'
+import 'app/Application/ApplicationSchema';
 
+import { ApplicationSchema } from "app/Application/ApplicationSchema";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';
