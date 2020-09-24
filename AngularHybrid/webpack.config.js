@@ -12,6 +12,9 @@ module.exports = {
     entry: "./ng-app/main.ts",
     //entry: "./app/Application/ApplicationSchema.ts",
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: __dirname
+    },
     output: {
         filename: 'webpack.bundle.js',
         path: path.resolve(__dirname, 'dist')
