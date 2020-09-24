@@ -7,8 +7,8 @@ import { UpgradeModule } from '@angular/upgrade/static';
 import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AngularComponent } from './stackoverflow/angular.component';
-import { AngularJsService } from '../app/stackoverflow/angularjs.service';
 import { SecondComponent } from './stackoverflow/second.component';
+import { AngularService } from './stackoverflow/angular.service';
 
 @NgModule({
     imports: [
@@ -24,8 +24,8 @@ import { SecondComponent } from './stackoverflow/second.component';
     ],
     providers: [
         {
-            provide: AngularJsService,
-            useClass: AngularJsService,
+            provide: AngularService,
+            useClass: AngularService,
             deps: ['$location']
         },
         {

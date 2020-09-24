@@ -9,7 +9,7 @@ export class SecondComponent {
 
     private svc: AngularJsService;
 
-    constructor(@Inject(AngularJsService) svc: AngularJsService) {
+    constructor(@Inject('AngularJsService') svc: AngularJsService) {
         console.log("SecondComponent instantiation");
         this.svc = svc;
     }

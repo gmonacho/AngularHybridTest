@@ -1,5 +1,6 @@
 ﻿import { Component, Inject } from "@angular/core";
 import { AngularJsService } from "../../app/stackoverflow/angularjs.service";
+import { AngularService } from "./angular.service";
 
 @Component({
     selector: 'angular-component',
@@ -7,9 +8,10 @@ import { AngularJsService } from "../../app/stackoverflow/angularjs.service";
 })
 export class AngularComponent {
 
-    private svc: AngularJsService;
+    private svc: AngularService;
+    public testInput: string = 'Input works';
 
-    constructor(@Inject(AngularJsService) svc: AngularJsService) {
+    constructor(@Inject(AngularService) svc: AngularService) {
         console.log("AngularComponent instantiation");
         this.svc = svc;
     }

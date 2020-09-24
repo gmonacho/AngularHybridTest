@@ -1,15 +1,15 @@
 ﻿import { AngularJsService } from "./angularjs.service";
-import { Inject } from "@angular/core";
+import { AngularService } from "../../ng-app/stackoverflow/angular.service";
 
 export class AngularJsController implements ng.IController {
 
     public static $inject = [
-        "AngularJsService"
+        "AngularService"
     ]
 
-    private svc: AngularJsService;
+    private svc: AngularService;
 
-    constructor(@Inject(AngularJsService) svc: AngularJsService) {
+    constructor(svc: AngularService) {
         console.log('AngularJsController instantiation');
         this.svc = svc;
     }

@@ -1,13 +1,7 @@
-﻿//import { Injectable } from "@angular/core";
+﻿import { Injectable } from "@angular/core";
 
-//@Injectable()
-
-
-export class AngularJsService {
-
-    public static $inject = [
-        '$location'
-    ] 
+@Injectable()
+export class AngularService {
 
     private $location: ng.ILocationService;
 
