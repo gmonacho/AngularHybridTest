@@ -22,11 +22,11 @@ import './Application/polyfills';
         AngularComponent, SecondComponent
     ],
     providers: [
-        // {
-        //     provide: AngularService,
-        //     useClass: AngularService,
-        //     deps: ['$location']
-        // },
+        {
+            provide: AngularService,
+            useClass: AngularService,
+            deps: ['$location']
+        },
         {
             provide: '$location',
             useFactory: ($injector: any) => $injector.get('$location'),
