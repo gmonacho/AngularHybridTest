@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
+import { NgModule, StaticProvider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule } from '@angular/upgrade/static';
+import { UpgradeModule, downgradeModule } from '@angular/upgrade/static';
 import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AngularComponent } from './ng-app/stackoverflow/angular.component';
 import { SecondComponent } from './ng-app/stackoverflow/second.component';
 import { AngularService } from './ng-app/stackoverflow/angular.service';
-import { ApplicationSchema } from './ApplicationSchema';
+
+import './Application/polyfills';
 
 @NgModule({
     imports: [
@@ -21,11 +22,11 @@ import { ApplicationSchema } from './ApplicationSchema';
         AngularComponent, SecondComponent
     ],
     providers: [
-        {
-            provide: AngularService,
-            useClass: AngularService,
-            deps: ['$location']
-        },
+        // {
+        //     provide: AngularService,
+        //     useClass: AngularService,
+        //     deps: ['$location']
+        // },
         {
             provide: '$location',
             useFactory: ($injector: any) => $injector.get('$location'),
@@ -40,13 +41,10 @@ export class AppModule {
     }
 }
 
-import './Application/polyfills';
-
-let instance = new ApplicationSchema;
-instance.start();
+import './ApplicationSchema';
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
-    console.log("Bootstrapping in Hybrid mode with Angular & AngularJS");
-    const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
-    upgrade.bootstrap(document.body, ['esaboraSchema']);
-});
+        console.log("Bootstrapping in Hybrid mode with Angular & AngularJS");
+        const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
+        upgrade.bootstrap(document.body, ['esaboraSchema']);
+    });

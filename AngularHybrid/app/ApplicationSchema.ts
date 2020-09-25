@@ -41,32 +41,26 @@ export class ApplicationSchema extends ApplicationBase {
     }
 
     protected registerFactories(): void {
-        console.log("registerFactories");
         //throw new Error("Method not implemented.");
     }
 
     protected registerControllers(): void {
         this.module.controller('AngularJsController', AngularJsController);
-        console.log("registerControllers");
     }
 
     protected registerDirectives(): void {
         this.module.directive('angularjsDirective', AngularJsDirective);
         this.module.directive('angularComponent', downgradeComponent({ component: AngularComponent }))
-        console.log("registerDirectives");
     }
     
     protected registerServices(): void {
         this.module.service('AngularService', downgradeInjectable(AngularService));
-        console.log("registerServices");
     }
 
     protected registerFilters(): void {
-        console.log("registerFilters");
     }
 
     protected registerConstants(): void {
-        console.log("registerConstants");
     }
 
     protected moduleConfiguration(): (string | Function)[] {
@@ -80,3 +74,6 @@ export class ApplicationSchema extends ApplicationBase {
         return [ "$injector", fonctionRun ];
     }
 }
+
+instance = new ApplicationSchema;
+instance.start();

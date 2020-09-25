@@ -1,3 +1,7 @@
+import { StaticProvider } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { downgradeModule } from "@angular/upgrade/static";
+import { AppModule } from "app/main";
 import { IApplication } from "./IApplication";
 
     export abstract class ApplicationBase implements IApplication {

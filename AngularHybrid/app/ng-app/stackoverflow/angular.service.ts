@@ -1,6 +1,9 @@
 ﻿import { Injectable } from "@angular/core";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+    deps: ['$location']
+})
 export class AngularService {
 
     private $location: ng.ILocationService;
