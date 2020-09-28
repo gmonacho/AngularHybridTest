@@ -1,5 +1,4 @@
-﻿import { AngularJsService } from "./angularjs.service";
-import { AngularService } from "../../ng-app/stackoverflow/angular.service";
+﻿import { AngularService } from "app/angular/hello/angular.service";
 
 export class AngularJsController implements ng.IController {
 

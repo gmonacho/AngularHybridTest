@@ -1,8 +1,4 @@
-﻿//import { Injectable } from "@angular/core";
-
-//@Injectable()
-
-
+﻿
 export class AngularJsService {
 
     public static $inject = [

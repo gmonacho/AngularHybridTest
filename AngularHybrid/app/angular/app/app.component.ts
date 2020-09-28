@@ -1,16 +1,15 @@
 ﻿import { Component, Inject } from "@angular/core";
-import { AngularService } from "./angular.service";
+import { AngularService } from "../hello/angular.service";
 
 @Component({
     selector: 'angular-component',
     templateUrl: 'app/ng-app/stackoverflow/angular.template.html'
 })
-export class AngularComponent {
+export class AppComponent {
 
-    private svc: AngularService;
     public testInput: string = 'Input works';
 
-    constructor(@Inject(AngularService) svc: AngularService) {
+    constructor(private svc: AngularService) {
         console.log("AngularComponent instantiation");
         this.svc = svc;
     }
