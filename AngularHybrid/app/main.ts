@@ -7,19 +7,29 @@ import { AngularComponent } from './ng-app/stackoverflow/angular.component';
 import { SecondComponent } from './ng-app/stackoverflow/second.component';
 import { AngularService } from './ng-app/stackoverflow/angular.service';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TooltipModule } from 'ng2-tooltip-directive';
+
 import './Application/polyfills';
 
 @NgModule({
     imports: [
         BrowserModule,
         UpgradeModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule,
+        TooltipModule
     ],
     declarations: [
-        AngularComponent, SecondComponent
+        AngularComponent,
+        SecondComponent,
+        ButtonTooltipComponent
     ],
     entryComponents: [
-        AngularComponent, SecondComponent
+        AngularComponent,
+        SecondComponent,
+        ButtonTooltipComponent
     ],
     providers: [
         {
@@ -42,6 +52,7 @@ export class AppModule {
 }
 
 import './ApplicationSchema';
+import { ButtonTooltipComponent } from './ng-app/tooltip/button-tooltip.component';
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
         console.log("Bootstrapping in Hybrid mode with Angular & AngularJS");

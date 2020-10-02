@@ -6,6 +6,7 @@ import { AngularJsController } from "./ngjs-app/stackoverflow/angularjs.controll
 import { AngularJsDirective } from "./ngjs-app/stackoverflow/angularjs.directive";
 import { AngularComponent } from "./ng-app/stackoverflow/angular.component";
 import { AngularService } from "./ng-app/stackoverflow/angular.service";
+import { ButtonTooltipComponent } from "./ng-app/tooltip/button-tooltip.component";
 
 export var instance: ApplicationSchema;
 
@@ -50,7 +51,8 @@ export class ApplicationSchema extends ApplicationBase {
 
     protected registerDirectives(): void {
         this.module.directive('angularjsDirective', AngularJsDirective);
-        this.module.directive('angularComponent', downgradeComponent({ component: AngularComponent }))
+        this.module.directive('angularComponent', downgradeComponent({ component: AngularComponent }));
+        this.module.directive('buttonTooltip', downgradeComponent({ component: ButtonTooltipComponent }))
     }
     
     protected registerServices(): void {
