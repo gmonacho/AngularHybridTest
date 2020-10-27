@@ -163,4 +163,4 @@ node_modules/
 package-lock.json
 AngularHybridTest/package-lock.json
 
-AngularHybridTest/dist
+AngularHybrid/dist/

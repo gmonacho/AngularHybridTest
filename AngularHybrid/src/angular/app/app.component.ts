@@ -1,6 +1,5 @@
 ﻿import { Component, Inject, Input } from "@angular/core";
 import { AngularJsService } from "src/angularjs/app/app.service.ajs";
-import { AngularService } from "../hello/angular.service";
 
 @Component({
     selector: 'angular-component',

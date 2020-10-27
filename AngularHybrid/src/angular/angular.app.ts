@@ -15,16 +15,6 @@ import { AngularService } from './hello/angular.service';
         AppComponent
     ],
     providers: [
-    {
-        provide: AngularService,
-        useClass: AngularService,
-        deps: ['$location']
-    },
-    {
-        provide: '$location',
-        useFactory: ($injector: any) => $injector.get('$location'),
-        deps: ['$injector']
-    },
     ]
 })
 export class MainAngularModule {
