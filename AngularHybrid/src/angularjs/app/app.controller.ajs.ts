@@ -1,5 +1,4 @@
-﻿import { AngularService } from "src/angular/hello/angular.service";
-import { AngularJsService } from "./app.service.ajs";
+﻿import { AngularJsService } from "./app.service.ajs";
 
 export class AngularJsController implements ng.IController {
 
@@ -9,7 +8,9 @@ export class AngularJsController implements ng.IController {
 
     private svc: AngularJsService;
 
-    constructor(svc: AngularJsService) {
+    constructor(
+        svc: AngularJsService
+    ) {
         console.log('AngularJsController instantiation');
         this.svc = svc;
     }

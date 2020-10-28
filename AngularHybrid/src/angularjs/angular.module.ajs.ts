@@ -1,6 +1,6 @@
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { downgradeComponent, downgradeInjectable, downgradeModule } from '@angular/upgrade/static';
+import { downgradeComponent, downgradeModule } from '@angular/upgrade/static';
 import { StaticProvider } from "@angular/core";
 
 import { AngularJsController } from './app/app.controller.ajs';
@@ -8,7 +8,6 @@ import { AngularJsComponent } from './app/app.component.ajs';
 
 import { MainAngularModule } from "../angular/angular.app";
 import { AppComponent } from '../angular/app/app.component';
-import { AngularService } from '../angular/hello/angular.service';
 import { AngularJsService } from './app/app.service.ajs';
 
 const bootstrapFn = (extraProviders: StaticProvider[]) => {
@@ -17,7 +16,7 @@ const bootstrapFn = (extraProviders: StaticProvider[]) => {
     return platformRef.bootstrapModule(MainAngularModule);
 };
 
-const downgradedModule = downgradeModule(bootstrapFn);
+const downgradedModule: string = downgradeModule(bootstrapFn);
 
 // angular.module('mainAngularModule', [
 //     downgradedModule
